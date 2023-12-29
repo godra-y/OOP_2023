@@ -1,0 +1,9 @@
+
+public class Restaurant{
+	boolean servePizza(CanHavePizza eater) {
+		if(eater instanceof Person) {
+			System.out.println("Processing payments for the person.");
+        }
+        return true;
+	}
+}

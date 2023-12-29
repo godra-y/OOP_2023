@@ -1,0 +1,15 @@
+
+public class Triangle extends Shape{
+	private int base;
+	private int height;
+
+	public Triangle(int position, Color color, int base, int height) {
+		super(position, color);
+	    this.base=base;
+	    this.height=height;
+	}
+
+	public void draw() {
+	     System.out.println("Shape: triangle "+", color: "+color+", base: "+base+", height: "+height+", position: " + position);
+	}
+}

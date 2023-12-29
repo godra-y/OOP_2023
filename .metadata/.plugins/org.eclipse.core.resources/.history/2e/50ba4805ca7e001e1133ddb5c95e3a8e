@@ -1,0 +1,16 @@
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Restaurant restaurant = new Restaurant();
+		Restaurant delpapa = new Restaurant();
+		
+        Cat cat = new Cat();
+        Student student = new Student("John ");
+        
+        restaurant.servePizza(cat);     
+        restaurant.servePizza(student); 
+	}
+
+}

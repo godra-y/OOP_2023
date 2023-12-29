@@ -1,0 +1,23 @@
+package task5;
+
+public class testDragonLaunch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DragonLaunch dragonLaunch=new DragonLaunch();
+
+        // Example: BBGG (no launch)
+        dragonLaunch.kidnap(new Person(Gender.BOY));
+        dragonLaunch.kidnap(new Person(Gender.GIRL));
+        dragonLaunch.kidnap(new Person(Gender.GIRL));
+        dragonLaunch.kidnap(new Person(Gender.BOY));
+
+        boolean willEat = dragonLaunch.willDragonEatOrNot();
+        if (willEat) {
+            System.out.println("The dragon will eat!");
+        } 
+        else {
+            System.out.println("The dragon will not eat!");
+        }
+    }
+}

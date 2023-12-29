@@ -1,0 +1,14 @@
+
+public class Circle extends Shape{
+	private int radius;
+
+	 public Circle(int position, Color color, int radius) {
+	     super(position, color);
+	     this.radius=radius;
+	 }
+
+	 public void draw() {
+	     System.out.println("Drawing a " + color + " circle with radius " + radius + " at position " + position);
+	 }
+
+}

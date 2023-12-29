@@ -1,0 +1,73 @@
+import java.util.Vector;
+
+enum Gender {
+    BOY, GIRL
+}
+
+public class Person {
+	private Gender gender;
+
+    public Person(Gender gender) {
+        this.gender = gender;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    @Override
+    public String toString() {
+        return gender == Gender.BOY ? "B" : "G";
+    }
+}
+
+// Main class - DragonLaunch
+public class DragonLaunch {
+    private Vector<Person> kidnappedPeople = new Vector<>();
+
+    // Method to kidnap a person and add them to the Vector
+    public void kidnap(Person person) {
+        kidnappedPeople.add(person);
+    }
+
+    // Method to determine if the dragon will eat or not
+    public boolean willDragonEatOrNot() {
+        int boyCount = 0;
+        int girlCount = 0;
+        int eatenCount = 0;
+
+        for (Person person : kidnappedPeople) {
+            if (person.getGender() == Gender.BOY) {
+                boyCount++;
+            } else {
+                girlCount++;
+            }
+
+            if (boyCount > 0 && girlCount > 0) {
+                // If there's a pair (B-G), they vanish
+                boyCount--;
+                girlCount--;
+                eatenCount += 2;
+            }
+        }
+
+        // If there are any remaining individuals, they will be eaten
+        eatenCount += boyCount + girlCount;
+
+        // If no one is left to be eaten, return false (no launch)
+        return eatenCount > 0;
+    }
+
+    public static void main(String[] args) {
+        DragonLaunch dragonLaunch = new DragonLaunch();
+
+        // Example: Creating a line of people BBGG
+        dragonLaunch.kidnap(new Person(Gender.BOY));
+        dragonLaunch.kidnap(new Person(Gender.BOY));
+        dragonLaunch.kidnap(new Person(Gender.GIRL));
+        dragonLaunch.kidnap(new Person(Gender.GIRL));
+
+        boolean willEat = dragonLaunch.willDragonEatOrNot();
+        System.out.println("Will the dragon eat? " + willEat);
+    }
+}

@@ -1,0 +1,6 @@
+
+public class Cat extends Animal implements CanHavePizza{
+	public void eatPizza() {
+		System.out.println("The cat is eating pizza.");
+	}
+}

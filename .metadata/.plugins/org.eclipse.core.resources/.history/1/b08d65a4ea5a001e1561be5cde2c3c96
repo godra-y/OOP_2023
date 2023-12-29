@@ -1,0 +1,32 @@
+package task1;
+
+public class Data {
+	private double sum;
+    private int count;
+    private double max;
+
+    public Data() {
+        sum=0.0;
+        count=0;
+        max=Double.NEGATIVE_INFINITY;
+    }
+
+    public void addValue(double value) {
+        sum+=value;
+        count++;
+        if (value > max) {
+            max = value;
+        }
+    }
+
+    public double getAverage() {
+        if (count == 0) {
+            return 0.0;
+        }
+        return sum / count;
+    }
+
+    public double getMax() {
+        return max;
+    }
+}

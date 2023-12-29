@@ -1,0 +1,64 @@
+
+public abstract class Shape {
+	protected int position;
+	protected Color color;
+
+	public Shape(int position, Color color) {
+		this.position=position;
+		this.color=color;
+	}
+
+	public abstract void draw();
+	
+}
+
+	//Concrete class Circle
+	class Circle extends Shape {
+	 private int radius;
+
+	 public Circle(int position, Color color, int radius) {
+	     super(position, color);
+	     this.radius = radius;
+	 }
+
+	 @Override
+	 public void draw() {
+	     System.out.println("Drawing a " + color + " circle with radius " + radius + " at position " + position);
+	 }
+	}
+
+	//Concrete class Rectangle
+	class Rectangle extends Shape {
+	 private int width;
+	 private int height;
+
+	 public Rectangle(int position, Color color, int width, int height) {
+	     super(position, color);
+	     this.width = width;
+	     this.height = height;
+	 }
+
+	 @Override
+	 public void draw() {
+	     System.out.println("Drawing a " + color + " rectangle with width " + width + " and height " + height + " at position " + position);
+	 }
+	}
+
+	//Concrete class Triangle
+	class Triangle extends Shape {
+	 private int base;
+	 private int height;
+
+	 public Triangle(int position, Color color, int base, int height) {
+	     super(position, color);
+	     this.base = base;
+	     this.height = height;
+	 }
+
+	 @Override
+	 public void draw() {
+	     System.out.println("Drawing a " + color + " triangle with base " + base + " and height " + height + " at position " + position);
+	 }
+	
+
+}

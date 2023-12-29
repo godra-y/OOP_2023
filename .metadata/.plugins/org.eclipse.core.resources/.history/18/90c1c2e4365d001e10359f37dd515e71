@@ -1,0 +1,31 @@
+package task5;
+import java.util.Vector;
+public class DragonLaunch {
+	private Vector<Person> kidnappedPeople;
+	// У него есть поле kidnappedPeople типа Vector<Person>, которое представляет список похищенных людей.
+
+    public DragonLaunch() {
+        kidnappedPeople=new Vector<>();
+    }
+    // Конструктор DragonLaunch инициализирует пустой список похищенных людей.
+
+    public void kidnap(Person P) {
+        kidnappedPeople.add(P);
+    }
+    // Метод kidnap принимает объект Person и добавляет его в список kidnappedPeople.
+
+    public boolean willDragonEatOrNot() {
+        Vector<Person> remainingPeople = new Vector<>(kidnappedPeople);
+
+        for (int i = 0; i < remainingPeople.size() - 1; i++) {
+            if (remainingPeople.get(i).toString().equals("B") &&
+                remainingPeople.get(i + 1).toString().equals("G")) {
+                // If a BG pair is found, remove them from the list
+                remainingPeople.remove(i);
+                remainingPeople.remove(i);
+                i = -1; // Start over from the beginning
+            }
+        }
+
+        return remainingPeople.size() > 0;
+    }

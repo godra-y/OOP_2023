@@ -1,0 +1,37 @@
+package task1;
+
+import java.util.Scanner;
+
+public class Analyzer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+        Data data = new Data();
+
+        while (true) {
+            System.out.print("Введите число (Q для выхода): ");
+            if (scanner.hasNextDouble()) {
+                double value = scanner.nextDouble();
+                data.addValue(value);
+            } else {
+                String input = scanner.next();
+                if (input.equalsIgnoreCase("Q")) {
+                    break;
+                } else {
+                    System.out.println("Некорректный ввод. Пожалуйста, введите число или 'Q' для выхода.");
+                }
+            }
+        }
+
+        double average = data.getAverage();
+        double max = data.getMax();
+
+        System.out.println("Среднее значение = " + average);
+        System.out.println("Максимум = " + max);
+
+        scanner.close();
+ 
+	}
+
+}

@@ -1,0 +1,14 @@
+
+public class Student extends Person implements CanHavePizza{
+	public void eatPizza() {
+        System.out.println("The student is eating pizza.");
+    }
+
+    public void move() {
+        System.out.println("The student is moving.");
+    }
+
+    public void dance() {
+        System.out.println("The student is dancing.");
+    }
+}

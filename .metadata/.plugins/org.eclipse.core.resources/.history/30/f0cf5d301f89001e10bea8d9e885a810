@@ -1,0 +1,7 @@
+package task1;
+
+public class Shootable {
+	int MAX_SHOTS = 5;
+	
+	void shoot();
+}

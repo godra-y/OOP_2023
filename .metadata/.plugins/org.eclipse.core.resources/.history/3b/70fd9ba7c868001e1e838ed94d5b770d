@@ -1,0 +1,15 @@
+
+public class Rectangle extends Shape{
+	private int width;
+	private int height;
+
+	public Rectangle(int position, Color color, int width, int height) {
+		super(position, color);
+	    this.width = width;
+	    this.height = height;
+	 }
+
+	public void draw() {
+		System.out.println("Drawing a " + color + " rectangle with width " + width + " and height " + height + " at position " + position);
+	}
+}
